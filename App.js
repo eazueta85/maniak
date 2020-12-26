@@ -15,7 +15,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import axiosClient from './axios';
+import axiosClient from './src/config/axios';
 
 const App = () => {
   useEffect(() => {
