@@ -1,12 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -23,8 +15,23 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import axiosClient from './src/config/axios';
 
-const App: () => React$Node = () => {
+const App = () => {
+  useEffect(() => {
+    async function getlogin() {
+      try {
+        const login = await axiosClient.post('/login/', {
+          username: 'challenge@maniak.co',
+          password: 'maniak2020',
+        });
+        console.log('Entro', login);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getlogin();
+  }, []);
   return (
     <>
       <StatusBar barStyle="dark-content" />
