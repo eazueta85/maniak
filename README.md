@@ -2,7 +2,9 @@
 
 ## Instrucciones:
 1.- Instalar React Native CLI [Link](https://reactnative.dev/docs/environment-setup)
+
 2.- Clonar el proyecto.
+
 3.- Instalar las dependencias.
 ```sh
 $ npm install
@@ -11,7 +13,7 @@ $ npm install
 ```sh
 $ react-native run-ios
 ```
-4.-Ejecutar la Aplicación con Andoid:
+5.-Ejecutar la Aplicación con Andoid:
 ```sh
 $ react-native run-android
 ```
