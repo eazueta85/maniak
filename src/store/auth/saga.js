@@ -7,6 +7,7 @@ import {
   loginError,
   logOutSuccess,
   loginGetToken,
+  loginTokenError,
 } from './action';
 import {
   setStorage,
@@ -32,7 +33,6 @@ function* loginSaga(values) {
     const token = yield call(getStorage, USER_TOKEN);
     yield put(loginSuccess(data, token));
   } catch (error) {
-    console.log(error);
     yield call(removeStorage, USER_TOKEN);
     yield put(loginError());
   }
@@ -40,19 +40,17 @@ function* loginSaga(values) {
 
 //Valid Session Token
 const user = async () =>
-  await axiosClient.get('/images/').then((response) => response.data);
+  await axiosClient.get('/images').then((response) => response.data);
 
 function* loginTokenValidSagas() {
   try {
     yield put(loginStart());
-    yield call(delay, 2000);
     const token = yield call(getStorage, USER_TOKEN);
     yield put(loginGetToken(token));
     const data = yield call(user);
     yield put(loginSuccess(data, token));
   } catch (error) {
-    const token = yield call(getStorage, USER_TOKEN);
-    yield put(loginError(token));
+    yield put(loginTokenError());
   }
 }
 

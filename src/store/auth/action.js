@@ -5,6 +5,7 @@ import {
     LOGIN_ERROR,
     LOGIN_TOKEN_VALID,
     LOGIN_GET_TOKEN,
+    LOGIN_TOKEN_ERROR,
     LOGOUT,
     LOGOUT_SUCCESS,
   } from './types';
@@ -31,6 +32,9 @@ import {
   
   export function loginGetToken(token) {
     return {type: LOGIN_GET_TOKEN, payload: {token}};
+  }
+  export function loginTokenError() {
+    return {type: LOGIN_TOKEN_ERROR};
   }
   
   export function logOut() {
