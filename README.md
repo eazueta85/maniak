@@ -1,11 +1,11 @@
 # Maniak React Native Coding Challenge
 
 ## Requisitos:
-Xcode 12.3 +
-iOS 14.3 +
-Andoid Studio 4.1 +
-Andriod 9 +
-SDK Plaform 28 +
+- Xcode 12.3 +
+- iOS 14.3 +
+- Andoid Studio 4.1 +
+- Andriod 9 +
+- SDK Plaform 28 +
 
 ## Instrucciones:
 1.- Instalar React Native CLI [Link](https://reactnative.dev/docs/environment-setup)
@@ -20,11 +20,11 @@ $ npm install
 ```sh
 $ npx pod-install
 ```
-4.-Ejecutar la Aplicación con iOS:
+5.-Ejecutar la Aplicación con iOS:
 ```sh
 $ react-native run-ios
 ```
-5.-Ejecutar la Aplicación con Andoid:
+6.-Ejecutar la Aplicación con Andoid:
 ```sh
 $ react-native run-android
 ```
