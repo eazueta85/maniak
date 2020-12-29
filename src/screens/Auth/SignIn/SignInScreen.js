@@ -32,8 +32,7 @@ const SignInScreen = () => {
 
   //Reducers
   const loading = useSelector((state) => state.auth.loading);
-  const error = useSelector((state) => state.auth.error);
-  const errorToken = useSelector((state) => state.auth.errorToken);
+  const errorAuth = useSelector((state) => state.auth.error);
 
   const onSubmit = (values) => {
     sendData(values);
@@ -48,7 +47,7 @@ const SignInScreen = () => {
     <Container>
       <ContentDismiss onPressOut={() => Keyboard.dismiss()}></ContentDismiss>
       <Title>Welcome</Title>
-      {error ? <Error>Invalid Access</Error> : null}
+      {errorAuth ? <TextError>Invalid Access</TextError> : null}
       <WrapperForm>
         <Label allowFontScaling={false}>User</Label>
         <Controller
@@ -128,7 +127,7 @@ const TextButton = styled.Text`
   font-size: 16px;
 `;
 
-export const Error = styled.Text`
+export const TextError = styled.Text`
   color: red;
   font-size: 14px;
   margin-top: 20px;
