@@ -20,11 +20,14 @@ $ react-native run-android
 
 ## Construido con:
 
-- React Native 
-- Styled-Components.
+- React Native.
+- React Navigation.
+- React Hook Form.
+- React Hooks.
 - Redux.
 - Sagas.
-- React Hooks.
 - Axios.
+- Styled-Components.
+- Lottie.
 
 Para ver el funcionamiento de la aplicación vaya al siguiente enlace: [Ver Video](https://youtu.be/4LBfzSIhNvo)

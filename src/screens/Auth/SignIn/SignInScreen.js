@@ -51,23 +51,37 @@ const SignInScreen = () => {
       <WrapperForm>
         <Label allowFontScaling={false}>User</Label>
         <Controller
+          render={({onChange, onBlur, value}) => (
+            <FormInput
+              onBlur={onBlur}
+              onChangeText={(value) => onChange(value)}
+              value={value}
+              keyboardType="email-address"
+              error={errors.email}
+            />
+          )}
           control={control}
-          as={FormInput}
           name="email"
-          keyboardType="email-address"
           rules={{required: true}}
           error={errors.email}
           defaultValue=""
         />
         <Label>Password</Label>
         <Controller
+          render={({onChange, onBlur, value}) => (
+            <FormInput
+              onBlur={onBlur}
+              onChangeText={(value) => onChange(value)}
+              value={value}
+              keyboardType="default"
+              error={errors.password}
+              secureTextEntry={true}
+            />
+          )}
           control={control}
-          as={FormInput}
           name="password"
-          keyboardType="default"
           rules={{required: true}}
           error={errors.password}
-          secureTextEntry={true}
           defaultValue=""
         />
       </WrapperForm>

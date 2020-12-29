@@ -3,7 +3,6 @@ import {Pressable} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {logOut} from '../../../store/auth/action';
 import styled from 'styled-components';
-import Loading from '../../../components/Loader/Loading';
 
 const LogoutScreen = () => {
   const logo = '../../../assets/images/logo.png';
