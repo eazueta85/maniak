@@ -1,27 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const FormInput = ({
-  onChange,
-  onBlur,
-  value,
-  name,
-  keyboardType,
-  secureTextEntry,
-  error,
-}) => {
+export const FormInput = (props) => {
+  const {error} = props;
   return (
     <>
-      <TextInput
-        allowFontScaling={false}
-        keyboardType={keyboardType}
-        autoCapitalize="none"
-        onBlur={onBlur}
-        onChangeText={(value) => onChange(value)}
-        value={value}
-        name={name}
-        secureTextEntry={secureTextEntry}
-      />
+      <TextInput autoCapitalize="none" {...props} />
       {error && <Error>{error.message}</Error>}
     </>
   );
